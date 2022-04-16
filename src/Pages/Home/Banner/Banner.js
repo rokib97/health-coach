@@ -20,9 +20,9 @@ const Banner = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h1>Hi, I’m Ashley Graff!</h1>
+            <h1 className="title display-4">Hi, I’m Ashley Graff!</h1>
             <p>Your new Personal Coach for better life!</p>
-            <button className="btn btn-lg btn-outline-light rounded-pill fw-bold text-color">
+            <button className="btn btn-lg btn-outline-light rounded-pill fw-bold text-color btn-details">
               About me
             </button>
           </Carousel.Caption>
@@ -35,9 +35,9 @@ const Banner = () => {
           />
 
           <Carousel.Caption>
-            <h1 className="title">Hi, I’m Ashley Graff!</h1>
+            <h1 className="title display-4">Hi, I’m Ashley Graff!</h1>
             <p>Your new Personal Coach for better life!</p>
-            <button className="btn btn-lg btn-outline-light rounded-pill fw-bold text-color">
+            <button className="btn btn-lg btn-outline-light rounded-pill fw-bold text-color btn-details">
               Contact with me
             </button>
           </Carousel.Caption>

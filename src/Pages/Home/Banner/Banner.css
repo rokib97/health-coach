@@ -7,3 +7,19 @@
 .text-color:hover {
   color: #2acd35;
 }
+.title {
+  font-family: "Lobster", cursive;
+}
+
+/* responsive for mobile devices  */
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 16px;
+  }
+  .carousel-caption p {
+    font-size: 10px;
+  }
+  .btn-details {
+    font-size: 10px;
+  }
+}
