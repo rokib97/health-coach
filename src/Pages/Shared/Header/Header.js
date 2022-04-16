@@ -1,15 +1,18 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import logo from "../../../Images/logo.png";
+import logo from "../../../Images/logo1.png";
 import "./Header.css";
 
 const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <NavLink to="/">
-          <img width={200} src={logo} alt="" />
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-link" : "link")}
+          to="/"
+        >
+          <img width={70} src={logo} alt="" />
         </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
