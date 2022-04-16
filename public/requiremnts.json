@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Nutrition Strategies",
+    "description": "Healthy diet for body as well as for mind.",
+    "img": "https://images.unsplash.com/photo-1535914254981-b5012eebbd15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Workout Routines",
+    "description": "Taking care of your body is important.",
+    "img": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Individual Support",
+    "description": "More of a friend than a health coach.",
+    "img": "https://images.unsplash.com/photo-1627483262112-039e9a0a0f16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "id": 4,
+    "name": "First-Hand Advice",
+    "description": "Broad experience is always a bonus.",
+    "img": "https://images.unsplash.com/photo-1553531889-65d9c41c2609?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+  }
+]

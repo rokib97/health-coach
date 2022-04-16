@@ -6,7 +6,13 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="light"
+      sticky="top"
+      variant="light"
+    >
       <Container>
         <NavLink
           className={({ isActive }) => (isActive ? "active-link" : "link")}

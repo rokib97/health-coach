@@ -1,5 +1,8 @@
 .slider-two {
   background-image: url("../../../Images/background.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
 }
 .text-color:hover {
   color: #2acd35;
