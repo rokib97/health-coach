@@ -12,7 +12,7 @@ const Header = () => {
           className={({ isActive }) => (isActive ? "active-link" : "link")}
           to="/"
         >
-          <img width={70} src={logo} alt="" />
+          <img width={75} src={logo} alt="" />
         </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

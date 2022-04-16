@@ -1,0 +1,11 @@
+.single-container {
+  box-shadow: 0;
+  transition: box-shadow 1s;
+}
+.single-container:hover {
+  border-radius: 40px;
+  border-bottom-left-radius: 0;
+
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}

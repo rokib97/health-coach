@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Personalized Nutrition Plan",
+    "price": "75",
+    "description": "Personalized nutrition is defined as the creation of an eating plan with dietary recommendations designed specifically for your body and lifestyle.",
+    "img": "https://i.ibb.co/WGNyjYC/nutration-plan.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Personal Exercise Plan",
+    "price": "100",
+    "description": "Starting a fitness program may be one of the best things you can do for your health. Physical activity can reduce your risk of chronic disease, improve your balance and coordination, help you lose weight",
+    "img": "https://i.ibb.co/BKdtJHd/exercise.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Individual Routine Program",
+    "price": "150",
+    "description": "Knowing where to start is a challenge if you're a new exerciser or trying to get back into exercise. The best workout schedule for you will depend on various factors like your age, fitness level, goals, and any physical restrictions you may have.",
+    "img": "https://i.ibb.co/s6gb1kL/routine.jpg"
+  }
+]

@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 import slider1 from "../../../Images/slider-1.jpg";
 import slider2 from "../../../Images/slider-2.png";
 import "./Banner.css";
-// import background from '../../../Images/background.jpg'
+
 const Banner = () => {
   const [index, setIndex] = useState(0);
 
