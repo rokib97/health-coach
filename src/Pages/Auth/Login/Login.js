@@ -4,7 +4,7 @@ import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
@@ -15,16 +15,20 @@ const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-
+  const [sendPasswordResetEmail, sending, passwordError] =
+    useSendPasswordResetEmail(auth);
+  console.log(passwordError);
   useEffect(() => {
     if (user) {
       toast("Logged in Successfully!");
-      navigate("/");
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate, from]);
   if (loading || sending) {
     return <Loading></Loading>;
   }
@@ -40,13 +44,13 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email");
+      toast("Sent email,Please Reset Password");
     } else {
       toast("Please Enter Email");
     }
   };
   return (
-    <div className="container my-5">
+    <div data-aos="fade-down-right" className="container my-5">
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-lg-4 col-md-8 col-12 mx-auto">
           <div className="w-100 form-details p-4">
@@ -80,7 +84,7 @@ const Login = () => {
                   ? "User not found!"
                   : ""}
               </p>
-
+              <p className="text-danger">{passwordError?.message}</p>
               <h6 className="my-3">
                 Forget Password?
                 <span>

@@ -3,7 +3,7 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import facebook from "../../../Images/facebook.png";
@@ -13,6 +13,8 @@ import google from "../../../Images/google.png";
 const SocialLogin = () => {
   let errorElement;
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const [signInWithGoogle, googleUser, , googleError] =
     useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, , githubError] =
@@ -32,9 +34,9 @@ const SocialLogin = () => {
   useEffect(() => {
     if (googleUser || githubUser) {
       toast("Logged in Successfully!");
-      navigate("/");
+      navigate(from, { replace: true });
     }
-  }, [googleUser, navigate, githubUser]);
+  }, [googleUser, navigate, githubUser, from]);
 
   const handleGoogleSignIn = () => {
     signInWithGoogle();

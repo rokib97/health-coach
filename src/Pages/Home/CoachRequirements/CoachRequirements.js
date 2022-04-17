@@ -6,7 +6,7 @@ import "./CoachRequirements.css";
 const CoachRequirements = () => {
   const [requirements] = useData();
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 requirements">
       <h1 className="text-center my-5 title display-6">
         Why people need a Health Coach
       </h1>

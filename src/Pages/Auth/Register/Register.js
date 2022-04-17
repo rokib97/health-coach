@@ -4,7 +4,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
@@ -15,9 +15,11 @@ const Register = () => {
   const [passwordError, setPassswordError] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  const [createUserWithEmailAndPassword, , loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating] = useUpdateProfile(auth);
 
@@ -44,10 +46,11 @@ const Register = () => {
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     toast("User Created Successfully!");
-    navigate("/");
+    toast("Email Verification Sent!");
+    navigate(from, { replace: true });
   };
   return (
-    <div className="container my-5 ">
+    <div data-aos="fade-down-left" className="container my-5 ">
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-lg-4 col-md-8 col-12 mx-auto">
           <div className="w-100 form-details p-4">

@@ -20,7 +20,7 @@ const Header = () => {
     >
       <Container>
         <NavLink to="/">
-          <img width={75} src={logo1} alt="" />
+          <img width={65} src={logo1} alt="" />
         </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
