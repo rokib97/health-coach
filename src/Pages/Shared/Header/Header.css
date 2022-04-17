@@ -5,6 +5,8 @@
   transition: color ease-in-out 300ms;
   color: #2acd35;
   font-weight: 600;
+  border-bottom: 4px solid #2acd35;
+  width: max-content;
 }
 .navbar-color a:hover {
   color: #2acd35;

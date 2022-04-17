@@ -14,10 +14,7 @@ const Header = () => {
       variant="light"
     >
       <Container>
-        <NavLink
-          className={({ isActive }) => (isActive ? "active-link" : "link")}
-          to="/"
-        >
+        <NavLink to="/">
           <img width={75} src={logo} alt="" />
         </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

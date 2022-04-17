@@ -19,7 +19,7 @@ const CoachRequirements = () => {
             ></SingleRequirement>
           ))}
       </div>
-      <p className="mt-5 text-center">
+      <p className="my-5 text-center">
         I am delighted to be able to share with you the techniques <br></br> I
         have learnt over the years that have brought me much
         <span className="happiness-title"> happiness and success</span>.

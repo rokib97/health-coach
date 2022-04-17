@@ -1,6 +1,7 @@
 .single-container {
-  box-shadow: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   transition: box-shadow 1s;
+  border-radius: 40px;
 }
 .single-container:hover {
   border-radius: 40px;
@@ -9,4 +10,13 @@
 
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+.service-btn-color {
+  color: #2acd35;
+}
+.service-btn-color:hover {
+  background-color: #2acd35;
+}
+.btn-outline-success {
+  border-color: #2acd35 !important;
 }

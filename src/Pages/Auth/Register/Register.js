@@ -4,15 +4,28 @@ import { Link } from "react-router-dom";
 import facebook from "../../../Images/facebook.png";
 import github from "../../../Images/github.png";
 import google from "../../../Images/google.png";
+import "./Register.css";
 
-const Login = () => {
+const Register = () => {
   return (
-    <div className="container my-5">
+    <div className="container my-5 ">
       <div className="row d-flex justify-content-center align-items-center">
-        <div className="col-lg-6 col-md-12 col-12">
+        <div className="col-lg-6 col-md-12 col-12 mx-auto">
           <div className="w-75 mx-auto form-details p-4">
-            <h1 className="my-4">WELCOME BACK</h1>
+            <h1 className="mt-4">Hello There,</h1>
+            <h4 className="mb-4">Register now to explore more</h4>
             <Form>
+              <Form.Group className="mb-4" controlId="formBasicEmail">
+                <Form.Control
+                  className=""
+                  required
+                  type="text"
+                  placeholder="Name"
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please provide a valid name.
+                </Form.Control.Feedback>
+              </Form.Group>
               <Form.Group className="mb-4" controlId="formBasicEmail">
                 <Form.Control
                   className=""
@@ -32,16 +45,16 @@ const Login = () => {
                 </Form.Control.Feedback>
               </Form.Group>
 
-              <h6 className="my-3">
-                Don't have a account?
+              <p className="my-3">
+                Already have a account?
                 <span>
-                  <Link to="/register" className="text-color">
-                    Register
+                  <Link to="/login" className="text-color">
+                    Log in
                   </Link>
                 </span>
-              </h6>
+              </p>
               <button className="btn w-100 auth-btn-color text-white fw-bold rounded-pill">
-                Login
+                Register
               </button>
               <h6 className="text-center my-3">Or Sign in with</h6>
               <div className="d-flex align-items-center justify-content-center">
@@ -57,4 +70,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
