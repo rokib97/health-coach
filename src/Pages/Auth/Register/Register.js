@@ -7,10 +7,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
-import facebook from "../../../Images/facebook.png";
-import github from "../../../Images/github.png";
-import google from "../../../Images/google.png";
 import Loading from "../../Shared/Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Register.css";
 
 const Register = () => {
@@ -29,7 +27,7 @@ const Register = () => {
   const confirmPasswordRef = useRef();
 
   if (loading || updating) {
-    <Loading></Loading>;
+    return <Loading></Loading>;
   }
 
   const handleFormInput = async (event) => {
@@ -96,7 +94,6 @@ const Register = () => {
                   ? "Email Already in use"
                   : ""}
               </p>
-
               <p className="my-3">
                 Already have a account?
                 <span>
@@ -108,13 +105,8 @@ const Register = () => {
               <button className="btn w-100 auth-btn-color text-white fw-bold rounded-pill">
                 Register
               </button>
-              <h6 className="text-center my-3">Or Sign in with</h6>
-              <div className="d-flex align-items-center justify-content-center">
-                <img className="mx-2" width={40} src={google} alt="" />
-                <img width={40} src={github} alt="" />
-                <img className="mx-2" width={40} src={facebook} alt="" />
-              </div>
             </Form>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

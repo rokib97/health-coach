@@ -7,27 +7,27 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
-import facebook from "../../../Images/facebook.png";
-import github from "../../../Images/github.png";
-import google from "../../../Images/google.png";
 import Loading from "../../Shared/Loading/Loading";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
   const emailRef = useRef("");
   const passwordRef = useRef("");
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-  if (loading || sending) {
-    <Loading></Loading>;
-  }
+
   useEffect(() => {
     if (user) {
       toast("Logged in Successfully!");
       navigate("/");
     }
   }, [user, navigate]);
+  if (loading || sending) {
+    return <Loading></Loading>;
+  }
 
   const handleSumbit = (event) => {
     event.preventDefault();
@@ -75,6 +75,12 @@ const Login = () => {
                   ? "Wrong Password"
                   : ""}
               </p>
+              <p className="text-danger">
+                {error?.message.includes("user-not-found")
+                  ? "User not found!"
+                  : ""}
+              </p>
+
               <h6 className="my-3">
                 Forget Password?
                 <span>
@@ -99,13 +105,8 @@ const Login = () => {
               <button className="btn w-100 auth-btn-color text-white fw-bold rounded-pill">
                 Login
               </button>
-              <h6 className="text-center my-3">Or Sign in with</h6>
-              <div className="d-flex align-items-center justify-content-center">
-                <img className="mx-2" width={40} src={google} alt="" />
-                <img width={40} src={github} alt="" />
-                <img className="mx-2" width={40} src={facebook} alt="" />
-              </div>
             </Form>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
