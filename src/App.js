@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import About from "./Pages/About/About";
 import Login from "./Pages/Auth/Login/Login";
@@ -13,6 +15,7 @@ function App() {
   return (
     <div>
       <Header></Header>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
