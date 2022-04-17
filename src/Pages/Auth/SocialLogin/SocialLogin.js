@@ -1,42 +1,44 @@
 import React, { useEffect } from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import facebook from "../../../Images/facebook.png";
 import github from "../../../Images/github.png";
 import google from "../../../Images/google.png";
-import Loading from "../../Shared/Loading/Loading";
 
 const SocialLogin = () => {
   let errorElement;
   const navigate = useNavigate();
-  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+  const [signInWithGoogle, googleUser, , googleError] =
     useSignInWithGoogle(auth);
+  const [signInWithGithub, githubUser, , githubError] =
+    useSignInWithGithub(auth);
 
-  if (googleError) {
+  if (googleError || githubError) {
     errorElement = (
       <p className="text-danger text-center mt-2">
-        Error:{" "}
-        {googleError?.message.includes("popup-closed-by-user")
+        Error:
+        {googleError?.message.includes("popup-closed-by-user") ||
+        githubError?.message.includes("popup-closed-by-user")
           ? "Popup Closed by user!"
           : ""}
       </p>
     );
   }
   useEffect(() => {
-    if (googleUser) {
+    if (googleUser || githubUser) {
       toast("Logged in Successfully!");
       navigate("/");
     }
-  }, [googleUser, navigate]);
+  }, [googleUser, navigate, githubUser]);
 
   const handleGoogleSignIn = () => {
     signInWithGoogle();
   };
-  if (googleLoading) {
-    return <Loading></Loading>;
-  }
   return (
     <div>
       {errorElement}
@@ -49,7 +51,12 @@ const SocialLogin = () => {
           src={google}
           alt=""
         />
-        <img width={40} src={github} alt="" />
+        <img
+          onClick={() => signInWithGithub()}
+          width={40}
+          src={github}
+          alt=""
+        />
         <img className="mx-2" width={40} src={facebook} alt="" />
       </div>
     </div>

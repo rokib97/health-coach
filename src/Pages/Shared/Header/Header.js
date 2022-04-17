@@ -4,7 +4,8 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
 import auth from "../../../firebase.init";
-import logo from "../../../Images/logo1.png";
+// import logo from "../../../Images/logo1.png";
+import logo1 from "../../../Images/download.png";
 import "./Header.css";
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
     >
       <Container>
         <NavLink to="/">
-          <img width={75} src={logo} alt="" />
+          <img width={75} src={logo1} alt="" />
         </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
