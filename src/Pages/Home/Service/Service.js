@@ -10,7 +10,7 @@ const Service = ({ service }) => {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-      className="col-lg-4 col-md-6 col-12 text-decoration-none text-black"
+      className="col-lg-4 col-md-6 col-12 text-decoration-none text-black mb-5"
     >
       <div className="text-center p-4 mt-3 single-container h-100">
         <img className="w-75 mx-auto rounded-3" src={img} alt="" />

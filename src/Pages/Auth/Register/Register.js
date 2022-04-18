@@ -18,7 +18,7 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, , loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating] = useUpdateProfile(auth);
