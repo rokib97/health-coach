@@ -14,7 +14,7 @@ const Service = ({ service }) => {
     >
       <div className="text-center p-4 mt-3 single-container h-100">
         <img className="w-75 mx-auto rounded-3" src={img} alt="" />
-        <h4 className="mt-3">{name}</h4>
+        <h5 className="mt-3">{name}</h5>
         <p className="opacity-75">
           {description.length > 100
             ? description.slice(0, 100) + "..."

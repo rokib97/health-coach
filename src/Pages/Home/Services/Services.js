@@ -8,10 +8,10 @@ const Services = () => {
 
   return (
     <div className="container my-5">
-      <h1 className="text-center title display-6">Do not wait for Tomorrow!</h1>
-      <h1 className="text-center title services-title mx-auto mb-4">
+      <h2 className="text-center title display-6">Do not wait for Tomorrow!</h2>
+      <h3 className="text-center title services-title mx-auto mb-4">
         Services
-      </h1>
+      </h3>
       <div className="row g-4">
         {services &&
           services.map((service) => (

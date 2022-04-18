@@ -7,7 +7,7 @@ const Blogs = () => {
   return (
     <main className="container-datails">
       <section className="faqs">
-        <h1>FAQs</h1>
+        <h1 className="title">FAQs</h1>
         {faqs.map((faq) => (
           <FAQ key={faq.id} {...faq} />
         ))}
