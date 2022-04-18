@@ -9,6 +9,7 @@ import auth from "../../../firebase.init";
 import facebook from "../../../Images/facebook.png";
 import github from "../../../Images/github.png";
 import google from "../../../Images/google.png";
+import "./SocialLogin.css";
 
 const SocialLogin = () => {
   let errorElement;
@@ -54,18 +55,19 @@ const SocialLogin = () => {
       <div className="d-flex align-items-center justify-content-center">
         <img
           onClick={handleGoogleSignIn}
-          className="mx-2"
+          className="mx-2 logos"
           width={40}
           src={google}
           alt=""
         />
         <img
+          className="logos"
           onClick={() => signInWithGithub()}
           width={40}
           src={github}
           alt=""
         />
-        <img className="mx-2" width={40} src={facebook} alt="" />
+        <img className="mx-2 logos" width={40} src={facebook} alt="" />
       </div>
     </div>
   );

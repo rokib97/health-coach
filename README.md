@@ -11,7 +11,7 @@ Live Link : [Health Coach](https://health-coach-4ffb0.web.app/).
 - About Section Contains About my goal.
 - Google And Github Sign in is present which is fully Functional.
 
-## A list of technologies (frameworks, libraries) used in your project
+## A list of technologies (frameworks, libraries) used in My project
 
 - React
 - React Router
