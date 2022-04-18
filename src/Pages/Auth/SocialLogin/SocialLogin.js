@@ -15,11 +15,16 @@ const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  // login with google using firebase hook
   const [signInWithGoogle, googleUser, , googleError] =
     useSignInWithGoogle(auth);
+
+  // login with github using firebase hook
   const [signInWithGithub, githubUser, , githubError] =
     useSignInWithGithub(auth);
 
+  // handle error for google and github log in
   if (googleError || githubError) {
     errorElement = (
       <p className="text-danger text-center mt-2">
@@ -38,6 +43,7 @@ const SocialLogin = () => {
     }
   }, [googleUser, navigate, githubUser, from]);
 
+  // function to sign in google
   const handleGoogleSignIn = () => {
     signInWithGoogle();
   };

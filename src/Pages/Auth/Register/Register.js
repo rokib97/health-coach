@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Form } from "react-bootstrap";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
@@ -15,10 +15,8 @@ const Register = () => {
   const [passwordError, setPassswordError] = useState("");
 
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
-
-  const [createUserWithEmailAndPassword, , loading, error] =
+  // create user with firebase book
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating] = useUpdateProfile(auth);
@@ -28,29 +26,38 @@ const Register = () => {
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
 
+  useEffect(() => {
+    if (user) {
+      toast("User Created Successfully!");
+      toast("Email Verification Sent!");
+      navigate("/");
+    }
+  }, [user, navigate]);
   if (loading || updating) {
     return <Loading></Loading>;
   }
 
+  // create user and update profile
   const handleFormInput = async (event) => {
     event.preventDefault();
-
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
-
+    // password validation
     if (password !== confirmPassword) {
       setPassswordError("Password does not match");
+      return;
     }
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    toast("User Created Successfully!");
-    toast("Email Verification Sent!");
-    navigate(from, { replace: true });
   };
   return (
-    <div data-aos="fade-down-left" className="container my-5 ">
+    <div
+      data-aos="zoom-in-up"
+      data-aos-anchor-placement="top-bottom"
+      className="container my-5 "
+    >
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-lg-4 col-md-8 col-12 mx-auto">
           <div className="w-100 form-details p-4">

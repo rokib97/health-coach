@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,8 +19,10 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
+  // sign in with email and password
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  //send pass reset
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   useEffect(() => {
@@ -32,6 +35,7 @@ const Login = () => {
     return <Loading></Loading>;
   }
 
+  // handle for submit for sign in
   const handleSumbit = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
@@ -39,6 +43,8 @@ const Login = () => {
     console.log(email, password);
     signInWithEmailAndPassword(email, password);
   };
+
+  // rest password
   const resetPassword = async () => {
     const email = emailRef.current.value;
     if (email) {
@@ -49,7 +55,11 @@ const Login = () => {
     }
   };
   return (
-    <div data-aos="fade-down-right" className="container my-5">
+    <div
+      data-aos="zoom-in-up"
+      data-aos-anchor-placement="top-bottom"
+      className="container login-container"
+    >
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-lg-4 col-md-8 col-12 mx-auto">
           <div className="w-100 form-details p-4">
