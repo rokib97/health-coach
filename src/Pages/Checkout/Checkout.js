@@ -30,8 +30,8 @@ const Checkout = () => {
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-lg-4 col-md-8 col-12 mx-auto">
           <div className="w-100 form-details p-4">
-            <h1 className="mt-2 title ">Hello There,</h1>
-            <h4 className="mb-3 title ">Register now to explore more</h4>
+            <h1 className="mt-2 title ">Information</h1>
+            <h4 className="mb-3 title ">Please fill up form</h4>
             <Form onSubmit={handleFormSubmit}>
               <Form.Group className="mb-4" controlId="formBasicEmail">
                 <Form.Control

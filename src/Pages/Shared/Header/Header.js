@@ -63,6 +63,12 @@ const Header = () => {
                 Login
               </NavLink>
             )}
+            <NavLink
+              className={({ isActive }) => (isActive ? "active-link" : "link")}
+              to={"/register"}
+            >
+              Sign up
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

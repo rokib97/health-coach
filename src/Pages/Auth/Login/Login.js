@@ -20,9 +20,8 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending, passwordError] =
-    useSendPasswordResetEmail(auth);
-  console.log(passwordError);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
   useEffect(() => {
     if (user) {
       toast("Logged in Successfully!");
@@ -84,7 +83,6 @@ const Login = () => {
                   ? "User not found!"
                   : ""}
               </p>
-              <p className="text-danger">{passwordError?.message}</p>
               <h6 className="my-3">
                 Forget Password?
                 <span>

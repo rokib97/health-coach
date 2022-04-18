@@ -11,7 +11,7 @@ const Banner = () => {
     setIndex(selectedIndex);
   };
   return (
-    <div className="carousel">
+    <div data-aos="zoom-in" className="carousel">
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img
