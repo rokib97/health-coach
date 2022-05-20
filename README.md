@@ -15,7 +15,7 @@ Live Link : [Health Coach](https://health-coach-4ffb0.web.app/).
 
 - React
 - React Router
-- Firebase
+- Firebase Authentication
 - React firebase hook
 - React Bootstrap
 - React-Toastify
