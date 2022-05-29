@@ -34,18 +34,6 @@ const Header = () => {
             >
               Home
             </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to={"/blogs"}
-            >
-              Blogs
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => (isActive ? "active-link" : "link")}
-              to={"/about"}
-            >
-              About
-            </NavLink>
             {user ? (
               <NavLink
                 onClick={() => signOut(auth)}
@@ -64,25 +52,6 @@ const Header = () => {
                 to={"/login"}
               >
                 Login
-              </NavLink>
-            )}
-            {user ? (
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active-link" : "link"
-                }
-                to={"/home"}
-              >
-                {user?.displayName}
-              </NavLink>
-            ) : (
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active-link" : "link"
-                }
-                to={"/register"}
-              >
-                Sign up
               </NavLink>
             )}
           </Nav>
